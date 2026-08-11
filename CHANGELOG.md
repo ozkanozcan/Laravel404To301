@@ -11,6 +11,17 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 
 ---
 
+## [1.0.1] — 2026-08-11
+
+### Fixed
+- **Critical:** Added missing `use Illuminate\Support\Facades\DB;` import in `MissingUrl` model — `DB::raw()` call inside `recordHit()` caused a fatal `Class not found` error at runtime when `db_log_missing` was enabled.
+- `SyncRedirectsCommand`: `is_active` field now correctly handles string values from CSV files (`'true'`, `'false'`, `'1'`, `'0'`, `'no'`), previously always cast to `true` for any non-empty string.
+
+### Changed
+- `composer.json`: Set `minimum-stability` from `dev` to `stable` — more appropriate for a released library package.
+
+---
+
 ## [1.0.0] — 2024-08-11
 
 ### Added
@@ -28,5 +39,6 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 - Full PHPUnit test suite.
 - GitHub Actions CI workflow for PHP 8.2/8.3/8.4 and Laravel 10/11/12.
 
-[Unreleased]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.0...HEAD
+[Unreleased]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.1...HEAD
+[1.0.1]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ozkanozcan/Laravel404To301/releases/tag/v1.0.0

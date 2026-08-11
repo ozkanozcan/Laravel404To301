@@ -4,6 +4,7 @@ namespace OzkanOzcan\Laravel404To301\Models;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 /**
  * @property int         $id

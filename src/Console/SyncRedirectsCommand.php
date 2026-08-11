@@ -85,12 +85,18 @@ class SyncRedirectsCommand extends Command
                 }
 
                 if (! $dryRun) {
+                    $isActive = $row['is_active'] ?? true;
+                    // Handle string values from CSV ('true'/'false'/'1'/'0')
+                    if (is_string($isActive)) {
+                        $isActive = ! in_array(strtolower(trim($isActive)), ['false', '0', 'no', ''], true);
+                    }
+
                     Redirect::updateOrCreate(
                         ['from_url' => $fromUrl],
                         [
                             'to_url'        => $toUrl,
                             'redirect_code' => $code,
-                            'is_active'     => (bool) ($row['is_active'] ?? true),
+                            'is_active'     => (bool) $isActive,
                             'note'          => $row['note'] ?? null,
                         ]
                     );

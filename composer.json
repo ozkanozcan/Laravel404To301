@@ -1,0 +1,60 @@
+{
+    "name": "ozkanozcan/laravel-404-to-301",
+    "description": "Automatically redirect 404 URLs to desired paths and log missing URLs for Laravel 10-13",
+    "keywords": ["laravel", "redirect", "404", "301", "seo", "middleware", "missing-urls"],
+    "homepage": "https://github.com/ozkanozcan/Laravel404To301",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Özkan Özcan",
+            "email": "ozkan@ozcanyazilim.com.tr",
+            "homepage": "https://ozcanyazilim.com.tr",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.2",
+        "illuminate/support": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/http": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/database": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/console": "^10.0|^11.0|^12.0|^13.0",
+        "illuminate/cache": "^10.0|^11.0|^12.0|^13.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^8.0|^9.0|^10.0",
+        "phpunit/phpunit": "^10.0|^11.0|^12.0",
+        "mockery/mockery": "^1.6"
+    },
+    "autoload": {
+        "psr-4": {
+            "OzkanOzcan\\Laravel404To301\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "OzkanOzcan\\Laravel404To301\\Tests\\": "tests/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "OzkanOzcan\\Laravel404To301\\Redirect404ServiceProvider"
+            ],
+            "aliases": {
+                "Redirect404": "OzkanOzcan\\Laravel404To301\\Redirect404Facade"
+            }
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "php-http/discovery": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}

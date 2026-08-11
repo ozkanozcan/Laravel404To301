@@ -1,0 +1,32 @@
+# Changelog
+
+All notable changes to `laravel-404-to-301` will be documented in this file.
+
+This project adheres to [Semantic Versioning](https://semver.org/) and
+[Conventional Commits](https://www.conventionalcommits.org/).
+
+---
+
+## [Unreleased]
+
+---
+
+## [1.0.0] — 2024-08-11
+
+### Added
+- `Handle404Redirect` middleware for automatic 404 interception and 301/302 redirection.
+- `Redirect` Eloquent model and `redirects` table migration with hit tracking and active toggles.
+- `MissingUrl` Eloquent model and `missing_urls` table migration with hit counter, referrer, IP, and user-agent logging.
+- `RedirectService` caching layer with configurable TTL and key prefixes.
+- `Redirect404Facade` facade access to underlying service methods.
+- `php artisan redirect:missing` command to inspect missing 404 logs.
+- `php artisan redirect:sync` command to bulk import CSV/JSON redirect rules.
+- `php artisan redirect:prune-missing` command to prune old missing URL records.
+- Configurable `ignore_patterns` to skip static asset 404s.
+- Dual missing URL logging (Database + Laravel Log channel).
+- Language support (`en`, `tr`).
+- Full PHPUnit test suite.
+- GitHub Actions CI workflow for PHP 8.2/8.3/8.4 and Laravel 10/11/12.
+
+[Unreleased]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.0...HEAD
+[1.0.0]: https://github.com/ozkanozcan/Laravel404To301/releases/tag/v1.0.0

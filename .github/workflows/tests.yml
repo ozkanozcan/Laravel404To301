@@ -30,6 +30,8 @@ jobs:
           coverage: none
 
       - name: Install dependencies
+        env:
+          COMPOSER_POLICY_ADVISORIES_BLOCK: 0
         run: |
           composer require "laravel/framework:${{ matrix.laravel }}" --no-interaction --no-update
           composer update --prefer-dist --no-interaction

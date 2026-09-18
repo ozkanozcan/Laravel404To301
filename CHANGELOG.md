@@ -8,6 +8,13 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 ---
 
 ## [Unreleased]
+ 
+---
+
+## [1.0.2] — 2026-09-18
+
+### Fixed
+- **CI / Composer Policy:** Fixed CI matrix test failures on Laravel 10 and 11 caused by Composer 2.8+ / Packagist `policy.advisories.block` blocking older framework versions with known security advisories. Added `policy.advisories.block: false` in `composer.json` config and `COMPOSER_POLICY_ADVISORIES_BLOCK: 0` in GitHub Actions workflow.
 
 ---
 
@@ -39,6 +46,7 @@ This project adheres to [Semantic Versioning](https://semver.org/) and
 - Full PHPUnit test suite.
 - GitHub Actions CI workflow for PHP 8.2/8.3/8.4 and Laravel 10/11/12.
 
-[Unreleased]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.1...HEAD
+[Unreleased]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.2...HEAD
+[1.0.2]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.1...v1.0.2
 [1.0.1]: https://github.com/ozkanozcan/Laravel404To301/compare/v1.0.0...v1.0.1
 [1.0.0]: https://github.com/ozkanozcan/Laravel404To301/releases/tag/v1.0.0
